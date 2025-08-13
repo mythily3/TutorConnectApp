@@ -29,31 +29,31 @@ An iOS app that helps students overcome academic challenges by easily connecting
 
 * [x] User can view tutor listing
 * [x] User can click on tutor listing to view more details about the tutor
-* [] User can add a tutor posting
 * [x] User can favorite tutor profiles they like, and view their favorited profiles 
 
 **Optional Nice-to-have Stories**
 
+* [] User can add a tutor posting
 * [] User can narrow down their search with typig keywords into a search bar
 * [] Users can filter based on university
 * [] Users can view a map with the location of nearby tutors
 
 ### 2. Screen Archetypes
 
-- [ ] Home Screen
+- [x] Home Screen
 * User can view a current overview of tutor profiles that are posted
 * User can use a search bar to narrow their search
 * Each profile displays a name, picture, subjects they tutor, their school affiliations, and their pay rates. 
-- [ ] Profile Screen
+- [x] Profile Screen
 * User can view more information about each tutor when a profile is clicked. 
 * Displays their name, picture, subjects, university, high school, a short bio detailing their qualifications/past relevant experiences, pay rate, availability, and contact information
-- [ ] Creation
+- [ ] Creation - Optional Screen
 * User can add a new tutor listing to the screen
-- [ ] Favorites Screen
+- [x] Favorites Screen
 * User can view the tutor profiles they have favorited.
-- [ ] Favorites Screen
+- [x] Favorites Screen
 * User can view a list of universities and filter the tutor listings based on university
-- [ ] Map Screen
+- [ ] Map Screen - Optional Screen
 * Users can view a map with the locations of tutors that are nearby to their own location
 
 ### 3. Navigation
@@ -66,11 +66,11 @@ An iOS app that helps students overcome academic challenges by easily connecting
 
 **Flow Navigation** (Screen to Screen)
 
-- [ ] Home Screen
+- [x] Home Screen
 * => Creation Screen
 * => Profile Screen
 * => Filter Screen
-- [ ] Favorites Screen
+- [x] Favorites Screen
 * => Profile Screen
 
 
@@ -83,34 +83,22 @@ An iOS app that helps students overcome academic challenges by easily connecting
 
 ### Models
 
-Tutor:
-    let id: Int
-    let name: String
-    let profileImageUrl: String
-    let subjects: [String]
-    let bio: String
-    let payRate: Double
-    let location: String
-    let university: String
-    let highSchool: String
-    let email: String
-    let phone: String
+- Tutor: id, name, profileImageUrl, subjects, bio, payRate, location, university, highSchool, email, phone
 
 ### Networking
 
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- Tutor Home Screen
+    - Request: loadTutors() from the JSON file
+- Optional: Google Maps API
 
-### Current Progress
-I have worked on setting up the initial table view on the app, created a JSON File with sample data, and displaying the data in each cell. Next Steps: Work on the aesthetic and UI of the home screen and start implementing other features. 
+## Current Progress
+I have worked on all the required features and will work on implementing the optional features next. 
 
 <div>
-    <a href="https://www.loom.com/share/eb38835bd63c4643b6ebb3530bcccf24">
+    <a href="https://www.loom.com/share/f35ff5c3f34d480a8c546397641ff2d7">
     </a>
-    <a href="https://www.loom.com/share/eb38835bd63c4643b6ebb3530bcccf24">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/eb38835bd63c4643b6ebb3530bcccf24-4aee81eb4bc6f31f-full-play.gif">
+    <a href="https://www.loom.com/share/f35ff5c3f34d480a8c546397641ff2d7">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f35ff5c3f34d480a8c546397641ff2d7-e3c7b1eee5626028-full-play.gif">
     </a>
   </div>
-  https://www.loom.com/share/eb38835bd63c4643b6ebb3530bcccf24?sid=260f41f7-b954-4527-b93b-95398e3377f9
-  
+https://www.loom.com/share/f35ff5c3f34d480a8c546397641ff2d7?sid=049cad6d-7ab2-4c47-9b66-68fb651ac5ea
