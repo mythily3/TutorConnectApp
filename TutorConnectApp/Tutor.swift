@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Tutor: Codable, Identifiable {
+struct Tutor: Codable, Identifiable, Equatable {
     let id: Int
     let name: String
     let profileImageUrl: String
@@ -46,7 +46,7 @@ extension Tutor {
     static func save(_ tutors: [Tutor], forKey key: String) {
         let defaults = UserDefaults.standard
         let encodedData = try! JSONEncoder().encode(tutors)
-        defaults.set(tutors, forKey: key)
+        defaults.set(encodedData, forKey: key)
         
     }
     static func getTutors(forKey key: String) -> [Tutor] {
