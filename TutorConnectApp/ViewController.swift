@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NukeExtensions
 
 class ViewController: UIViewController, UITableViewDataSource {
 
@@ -34,11 +35,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         cell.subjectsLabel.text = subjectsString
         cell.payLabel.text = "  $\(tutor.payRate)/hr  "
-//        if let image = URL(string: tutor.profileImageUrl) {
-//
-//            // Use the Nuke library's load image function to (async) fetch and load the image from the image url.
-//            NukeExtensions.loadImage(with: image, into: cell.profileImageView)
-//        }
+        if let image = URL(string: tutor.profileImageUrl) {
+
+            // Use the Nuke library's load image function to (async) fetch and load the image from the image url.
+            NukeExtensions.loadImage(with: image, into: cell.profileImageView)
+        }
         return cell
     }
     
