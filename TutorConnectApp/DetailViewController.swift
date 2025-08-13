@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NukeExtensions
 
 class DetailViewController: UIViewController {
     
@@ -33,6 +34,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var favoriteButton: UIButton!
     
+    var tutor: Tutor!
+    
     @IBAction func didTapFavoriteButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -41,13 +44,13 @@ class DetailViewController: UIViewController {
             tutor.removeFromFavorites()
         }
     }
-    var tutor: Tutor!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //TODO: favoriteButton.layer.cornerRadius = favoriteButton.frame
+        favoriteButton.layer.cornerRadius = favoriteButton.frame.width / 2
         nameLabel.text = tutor.name
         locationLabel.text = tutor.location
         uniLabel.text = tutor.university
@@ -66,16 +69,20 @@ class DetailViewController: UIViewController {
         emailLabel.text = tutor.email
         phoneLabel.text = tutor.phone
         availabilityLabel.text = tutor.availability
-        payLabel.text = "  $\(tutor.payRate)/hr  "
+        payLabel.text = "\(tutor.payRate)/hr"
         
         let favorites = Tutor.getTutors(forKey: Tutor.favoritesKey)
-        //TODO: fix below lines
-//        if favorites.contains(tutor) {
-//            favoriteButton.isSelected = true
-//        }
-//        else {
-//            favoriteButton.isSelected = false
-//        }
+        if favorites.contains(tutor) {
+            favoriteButton.isSelected = true
+        }
+        else {
+            favoriteButton.isSelected = false
+        }
+        if let image = URL(string: tutor.profileImageUrl) {
+
+            // Use the Nuke library's load image function to (async) fetch and load the image from the image url.
+            NukeExtensions.loadImage(with: image, into: picImageView)
+        }
     }
     
 
